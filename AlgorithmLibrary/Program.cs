@@ -1,5 +1,5 @@
 using AlgorithmLibrary.Contracts;
-using AlgorithmLibrary.Services;
+using AlgorithmLibrary.Services.ManipulationHashing;
 
 var builder = WebApplication.CreateBuilder(args);
 
