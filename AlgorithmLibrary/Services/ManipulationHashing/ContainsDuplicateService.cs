@@ -5,7 +5,7 @@ namespace AlgorithmLibrary.Services.ManipulationHashing;
 
 public class ContainsDuplicateService : IContainsDuplicateService
 {
-    public Task<Dictionary<string, bool>> demonstrate(int[] nums)
+    public Task<Dictionary<string, bool>> demonstrate()
     {
         Dictionary<string, bool> results = new Dictionary<string, bool>();
         ContainsDuplicateEntity entity = new ContainsDuplicateEntity();

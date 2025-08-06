@@ -12,6 +12,8 @@ builder.Services.AddSwaggerGen();
 
 // Services
 builder.Services.AddScoped<ITwoSumService, TwoSumService>();
+builder.Services.AddScoped<IContainsDuplicateService, ContainsDuplicateService>();
+builder.Services.AddScoped<IValidAnagramService, ValidAnagramService>();
 
 
 var app = builder.Build();
