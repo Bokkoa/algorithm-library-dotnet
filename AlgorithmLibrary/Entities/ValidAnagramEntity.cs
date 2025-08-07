@@ -13,6 +13,23 @@ public class ValidAnagramEntity
 
         int[] array = new int[26];
 
+        foreach(char subS in s)
+        {
+            int asciiValue = subS;
+            array[asciiValue - (int)'a'] += 1;
+        }
+
+        foreach (char subT in t)
+        {
+            int asciiValue = subT;
+            array[asciiValue - (int)'a'] -= 1;
+        }
+
+        foreach (int letter in array) {
+            if (letter != 0) return false;
+        }
+
+        return true;
     }
 
     public bool ProposalExecution(string s, string t)

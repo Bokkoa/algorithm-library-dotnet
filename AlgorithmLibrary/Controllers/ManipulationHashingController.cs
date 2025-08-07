@@ -10,15 +10,18 @@ public class ManipulationHashingController : ControllerBase
     private readonly ITwoSumService _TwoSumService;
     private readonly IContainsDuplicateService _ContainsDuplicateService;
     private readonly IValidAnagramService _ValidAnagramService;
+    private readonly IGroupAnagramsService _GroupAnagramService;
 
     public ManipulationHashingController(
         ITwoSumService twoSumService,
         IContainsDuplicateService containsDuplicateService,
-        IValidAnagramService validAnagramService)
+        IValidAnagramService validAnagramService,
+        IGroupAnagramsService groupAnagramService)
     {
         _TwoSumService = twoSumService;
         _ContainsDuplicateService = containsDuplicateService;
         _ValidAnagramService = validAnagramService;
+        _GroupAnagramService = groupAnagramService;
     }
 
     [HttpGet("twosum")]
@@ -40,4 +43,12 @@ public class ManipulationHashingController : ControllerBase
     {
         return await _ValidAnagramService.demonstrate();
     }
+
+    [HttpGet("group-anagram")]
+    public async Task<Dictionary<string, IList<IList<string>>> > GroupAnagram()
+    {
+        return await _GroupAnagramService.demonstrate();
+    }
+
+
 }
