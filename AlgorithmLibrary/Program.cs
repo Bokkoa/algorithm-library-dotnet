@@ -15,6 +15,8 @@ builder.Services.AddScoped<ITwoSumService, TwoSumService>();
 builder.Services.AddScoped<IContainsDuplicateService, ContainsDuplicateService>();
 builder.Services.AddScoped<IValidAnagramService, ValidAnagramService>();
 builder.Services.AddScoped<IGroupAnagramsService, GroupAnagramService>();
+builder.Services.AddScoped<ITopKFrequentElementsService, TopKFrequentElementsService>();
+builder.Services.AddScoped<IIsSubsequenceService, IsSubsequenceService>();
 
 
 var app = builder.Build();
