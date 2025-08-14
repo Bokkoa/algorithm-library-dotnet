@@ -17,6 +17,7 @@ builder.Services.AddScoped<IValidAnagramService, ValidAnagramService>();
 builder.Services.AddScoped<IGroupAnagramsService, GroupAnagramService>();
 builder.Services.AddScoped<ITopKFrequentElementsService, TopKFrequentElementsService>();
 builder.Services.AddScoped<IIsSubsequenceService, IsSubsequenceService>();
+builder.Services.AddScoped<ILongestConsecutiveSequenceService, LongestConsecutiveSequenceService>();
 
 
 var app = builder.Build();

@@ -13,13 +13,15 @@ public class ManipulationHashingController : ControllerBase
     private readonly IGroupAnagramsService _GroupAnagramService;
     private readonly ITopKFrequentElementsService _TopKFrequentElementsService;
     private readonly IIsSubsequenceService _IsSubsequenceService;
+    private readonly ILongestConsecutiveSequenceService _LongestConsecutiveSequenceService;
     public ManipulationHashingController(
         ITwoSumService twoSumService,
         IContainsDuplicateService containsDuplicateService,
         IValidAnagramService validAnagramService,
         IGroupAnagramsService groupAnagramService,
         ITopKFrequentElementsService topKFrequentElementsService,
-        IIsSubsequenceService isSubsequenceService)
+        IIsSubsequenceService isSubsequenceService,
+        ILongestConsecutiveSequenceService longestConsecutiveSequenceService)
     {
         _TwoSumService = twoSumService;
         _ContainsDuplicateService = containsDuplicateService;
@@ -27,6 +29,7 @@ public class ManipulationHashingController : ControllerBase
         _GroupAnagramService = groupAnagramService;
         _TopKFrequentElementsService = topKFrequentElementsService;
         _IsSubsequenceService = isSubsequenceService;
+        _LongestConsecutiveSequenceService = longestConsecutiveSequenceService;
     }
 
     [HttpGet("twosum")]
@@ -65,6 +68,13 @@ public class ManipulationHashingController : ControllerBase
     public async Task<Dictionary<string, bool>> IsSubsequence()
     {
         return await _IsSubsequenceService.demonstrate();
+    }
+
+
+    [HttpGet("longest-consecutive-sequence")]
+    public async Task<Dictionary<string, int>> LongestConsecutiveSequence()
+    {
+        return await _LongestConsecutiveSequenceService.demonstrate();
     }
 
 
